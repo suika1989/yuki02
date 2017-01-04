@@ -17,10 +17,16 @@ myapp.controller('my_shoppingcart',function($scope,cartShop,$state,$ionicViewSwi
 
     $scope.addto=function(item){
         item.number++
+        if(item.number>=99){
+            item.number=99
+        }
     };
 
     $scope.reduce=function(item){
         item.number--
+        if(item.number<=0){
+            item.number=0
+        }
     };
     $scope.clear = function(){
         cartShop.clear()
